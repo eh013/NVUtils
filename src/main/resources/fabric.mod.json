@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "nvutils",
+  "version": "${version}",
+
+  "name": "NVUtils",
+  "description": "",
+  "authors": [],
+  "contact": {},
+
+  "license": "All-Rights-Reserved",
+  "icon": "assets/nvutils/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "client": ["net.ippc.nvutils.client.NvutilsClient"],
+    "main": ["net.ippc.nvutils.Nvutils"]
+  },
+
+  "mixins": [
+    "nvutils.mixins.json"
+    ,{
+      "config": "nvutils.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
